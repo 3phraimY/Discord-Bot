@@ -7,9 +7,7 @@ import discord
 import requests
 import random
 
-# {"conversationId":"073a6739-fb40-4ea5-b63d-f2bf78287150","source":"instruct"}
-
- #GETS THE CLIENT OBJECT FROM DISCORD.PY. CLIENT IS SYNONYMOUS WITH BOT.
+#GETS THE CLIENT OBJECT FROM DISCORD.PY. CLIENT IS SYNONYMOUS WITH BOT.
 bot = discord.Client(intents=discord.Intents.all())
 
  #EVENT LISTENER FOR WHEN THE BOT HAS SWITCHED FROM OFFLINE TO ONLINE.
@@ -56,15 +54,11 @@ async def on_message(message):
     await get_top_gifs(currentMessage, message)
 
 
-
-# set the apikey and limit
-TENOR_API_KEY = 'AIzaSyDYcqJ9p0yqJ-uIF0hdY57EcVt3Rw4AikQ'
-
 client = discord.Client(intents=discord.Intents.default())
 
 # Function to get the top 8 GIF URLs from Tenor for a search term
 async def get_top_gifs(search_term, message):
-        # set the apikey and limit
+    # set the apikey and limit
     apikey = "AIzaSyDYcqJ9p0yqJ-uIF0hdY57EcVt3Rw4AikQ"  # click to set to your apikey
     lmt = 1
     ckey = "my_test_app"  # set the client_key for the integration and use the same value for all API calls
@@ -85,27 +79,5 @@ async def get_top_gifs(search_term, message):
         print("Found URLs:")
     else:
         print("error")
-
-@client.event
-async def on_ready():
-    print(f'Bot {client.user} is now online.')
-
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-
-    # Use the user's entire message as the search term
-    search_term = message.content.strip()
-    if search_term:
-        gif_urls = get_top_gifs(search_term)
-        if gif_urls:
-            # Send the top GIF URLs to the Discord channel
-            for gif_url in gif_urls:
-                await message.channel.send(gif_url)
-        else:
-            await message.channel.send("Sorry, I couldn't find any GIFs for that search term.")
-    else:
-        await message.channel.send("Please type something to search for GIFs.")
 
 bot.run(team3)
