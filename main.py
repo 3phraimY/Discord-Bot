@@ -1,6 +1,6 @@
-# team1 = "MTI5Nzg4OTY2ODc5MjE4ODk5OA.GrBQty.l77Ag-24SUtyIXYZs2Jhuppdh6BwNjei73PCG4"
-# team2 = "MTI5Nzg5MDg2MjM0ODUwMTA1Mw.GVkaGD.eYhhZjEJH2xqfzUoraqZe_5mO7PvUAXpN3kopo"
-team3 = "MTI5Nzg5MTAzNzQ5MDE4ODM0OQ.GJOLtt.PMibV5-ogEGeOeAD13ncYtR3te_V2Bzq66QySs"
+# team1 = "key"
+# team2 = "key"
+team3 = "Key"
  #IMPORT DISCORD.PY. ALLOWS ACCESS TO DISCORD'S API.
 
 import discord
